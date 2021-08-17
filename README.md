@@ -16,12 +16,16 @@ menu TS
 "line con 0", "autocommand menu TS"
 
 ### Commands for aync ports:
-"""
 line 0/1/0 0/1/15
+
  exec-t 0
+ 
  no exec
+ 
  transport input telnet
+ 
  transport output none
+ 
  stopbits 1
+ 
  flowcontrol hardware
-"""
