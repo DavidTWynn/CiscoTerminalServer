@@ -13,7 +13,9 @@ clear line x
 menu TS
 
 ### always see menu when logging in:
-"line con 0", "autocommand menu TS"
+line con 0
+
+autocommand menu TS
 
 ### Commands for aync ports:
 line 0/1/0 0/1/15
