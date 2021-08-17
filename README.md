@@ -31,3 +31,10 @@ line 0/1/0 0/1/15
  stopbits 1
  
  flowcontrol hardware
+ 
+ ## Sources
+ Configuring a Terminal/Comm Server - https://www.cisco.com/c/en/us/support/docs/dial-access/asynchronous-connections/5466-comm-server.html
+ 
+ Configure Terminal Server through Menu Options - https://www.cisco.com/c/en/us/support/docs/dial-access/asynchronous-connections/200462-Terminal-server-configuration-using-Menu.html
+ 
+ Cisco Terminal Server with ‘Menu’ command - https://routing-bits.com/2008/09/30/cisco-terminal-server-with-menu-command/
