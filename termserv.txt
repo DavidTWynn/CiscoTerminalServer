@@ -1,0 +1,61 @@
+# use "menu TS" priv-exec command to enter the terminal server 
+# optionally use "line con 0" "autocommand menu TS" to show menu on login
+menu TS title ^
+**********************************************************
+*                   Lab Terminal Server                  *
+*        To exit from a device: CTRL+SHIFT+6 - x         *
+*      To clear session:  show line - clear line NUM     *
+**********************************************************
+^
+# Configure the text on the menu - the names P0-7 correspond to the cable labels
+menu TS prompt ^ Your selection : ^
+!
+menu TS text 0 Connect to P0
+menu TS text 1 Connect to P1
+menu TS text 2 Connect to P2
+menu TS text 3 Connect to P3
+menu TS text 4 Connect to P4
+menu TS text 5 Connect to P5
+menu TS text 6 Connect to P6
+menu TS text 7 Connect to P7
+menu TS text s show all established sessions
+menu TS text c<no> clear the session by number ie: c5
+menu TS text e menu-exit
+menu TS text q Quit terminal server session
+!
+# set command meanings - starting telnet connection to specificed ip host or resuming if existing
+menu TS command 0 resume P0 /connect telnet P0
+menu TS command 1 resume P1 /connect telnet P1
+menu TS command 2 resume P2 /connect telnet P2
+menu TS command 3 resume P3 /connect telnet P3
+menu TS command 4 resume P4 /connect telnet P4
+menu TS command 5 resume P5 /connect telnet P5
+menu TS command 6 resume P6 /connect telnet P6
+menu TS command 7 resume P7 /connect telnet P7
+# set command meanings - others
+menu TS command s show sessions
+menu TS options s pause
+menu TS command e menu-exit
+menu TS command q exit
+menu TS clear-screen
+menu TS line-mode
+!
+# set clear commands
+menu TS command c0 disconnect P0
+menu TS command c1 disconnect P1
+menu TS command c2 disconnect P2
+menu TS command c3 disconnect P3
+menu TS command c4 disconnect P4
+menu TS command c5 disconnect P5
+menu TS command c6 disconnect P6
+menu TS command c7 disconnect P7
+!
+# Configure local hosts file to corresponding lines listening on telnet ports - 2000+ line number
+ip host P0 2027 10.0.0.1
+ip host P1 2028 10.0.0.1
+ip host P2 2029 10.0.0.1
+ip host P3 2030 10.0.0.1
+ip host P4 2031 10.0.0.1
+ip host P5 2032 10.0.0.1
+ip host P6 2033 10.0.0.1
+ip host P7 2034 10.0.0.1
